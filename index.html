@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Caroline ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #b30000;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #b30000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Caroline ❤️</h1>
+        <p>Minha deusa, todos os dias ao seu lado são como um presente que nunca quero parar de receber.</p>
+        <p>Clique no botão abaixo para um elogio surpresa! 😊</p>
+        <button onclick="mostrarElogio()">Me Surpreenda!</button>
+        <p id="elogio"></p>
+    </div>
+    
+    <script>
+        function mostrarElogio() {
+            const elogios = [
+                "Minha deusa, seu sorriso ilumina meus dias! ☀️",
+                "Meu amor, você é a pessoa mais incrível que já conheci! 💖",
+                "Minha paixão, cada momento com você é mágico! ✨",
+                "Meu tudo, eu me apaixono por você mais a cada dia! 😍",
+                "Meu ar, você é a melhor parte da minha vida! 💕"
+            ];
+            
+            const index = Math.floor(Math.random() * elogios.length);
+            document.getElementById("elogio").innerText = elogios[index];
+        }
+    </script>
+</body>
+</html>
