@@ -32,6 +32,22 @@
         button:hover {
             background-color: #800000;
         }
+        
+        /* Estilo do overlay */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -41,6 +57,15 @@
         <p>Clique no botão abaixo para um elogio surpresa! 😊</p>
         <button onclick="mostrarElogio()">Me Surpreenda!</button>
         <p id="elogio"></p>
+        <!-- Novo botão de pergunta secreta -->
+        <button onclick="mostrarPergunta()">Pergunta Secreta</button>
+    </div>
+    
+    <!-- Overlay que aparece com a pergunta secreta -->
+    <div id="overlay">
+        <div>
+            <p>E meu presente? 🎁</p>
+        </div>
     </div>
     
     <script>
@@ -55,6 +80,16 @@
             
             const index = Math.floor(Math.random() * elogios.length);
             document.getElementById("elogio").innerText = elogios[index];
+        }
+
+        function mostrarPergunta() {
+            // Exibe o overlay com a pergunta
+            document.getElementById("overlay").style.display = "flex";
+            
+            // Fecha o overlay quando clicado
+            document.getElementById("overlay").onclick = function() {
+                document.getElementById("overlay").style.display = "none";
+            };
         }
     </script>
 </body>
